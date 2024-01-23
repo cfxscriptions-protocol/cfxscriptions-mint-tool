@@ -1,0 +1,39 @@
+const config = {
+  // Set the number of times you want to mint. It is recommended not to exceed 50 at a time to avoid transaction failures.
+  repeatCount: 100,
+
+  // Increase the gas by a certain multiple based on the current gas
+  increaseGas: 1.2,
+
+  // How long to pause for each transaction (in milliseconds, 1000 = 1 second)
+  sleepTime: 10,
+
+  // Payment amount (default is 0)
+  payPrice: "0",
+
+  // Your wallet's private key
+  privateKey: "",
+
+  // Receiving address (can also be a contract address). If empty, it will send to your own address.
+  // Gate inscription contract address 0x02a0197781ed6d4fe5e0b36599fc4fda812a5817
+  receiveAddress: "",
+
+  // Inscription JSON data (replace with the inscription JSON format data you want to mint)
+  // Examples of tokenJson:
+  // 'data:,{"p":"cfxs-20","op":"mint","tick":"CFXS","amt":"1000"}',
+  // Inscription hex data (if tokenJson is empty, then tokenDataHex data will be used, directly using hexadecimal data to mint)
+  // If both tokenJson and tokenDataHex are empty, empty data will be used directly to mint.
+  // For example, Gate inscription directly uses the following data to mint:
+  // Gate inscription hexadecimal data: 0x1249c58b
+  tokenDataHex: "",
+  // Minimum id for the tick protocol
+  tokenMinId: 500000,
+  // Maximum id for the tick protocol
+  tokenMaxId: 1000000,
+
+  // RPC node (compatible with any EVM chain). Use the node address of the chain you want to mint on.
+  // For example:
+  rpcUrl: "https://evm.confluxrpc.com",
+};
+
+module.exports = config;
